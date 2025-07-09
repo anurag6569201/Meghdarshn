@@ -150,7 +150,7 @@ function App() {
                         {[ 'T-90m', 'T-60m', 'T-30m', 'T-0' ].map((label, i) => (
                           <div key={label} className="text-center">
                             <img 
-                              src={`https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=focalpoint&fp-x=${0.7-i*0.1}`} 
+                              src={`https://www.ihrc.fiu.edu/wp-content/uploads/2022/10/IAN_6_600x400-120x120.png`} 
                               alt={label} 
                               className="w-14 h-14 rounded-md border-2 border-slate-600 object-cover" 
                             />

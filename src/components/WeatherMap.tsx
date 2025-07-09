@@ -514,18 +514,15 @@ const WeatherMap: React.FC<WeatherMapProps> = ({
             <div className="text-slate-800 min-w-64">
               <h3 className="font-bold text-lg mb-2">New Delhi</h3>
               <div className="space-y-2">
-                <div className="bg-red-100 p-2 rounded">
-                  <p className="text-sm font-semibold text-red-800">⚡ Severe Thunderstorm Warning</p>
-                  <p className="text-xs text-red-600">HPIDM Confidence: 94%</p>
+                <div className="bg-transparent" style={{display:'flex',justifyContent:'center'}}>
+                  <img style={{width:'250px',borderRadius:'20px'}} src="https://www.ihrc.fiu.edu/wp-content/uploads/2022/10/IAN_6_600x400-120x120.png" alt="" />
                 </div>
                 <div className="text-sm space-y-1">
-                  <p><strong>Current:</strong> 68 dBZ reflectivity</p>
+                  <p className='p-0 m-0'><strong>Current:</strong> 68 dBZ reflectivity</p>
                   <p><strong>Forecast (+2h):</strong> Heavy rain, 45mm/hr</p>
                   <p><strong>Wind:</strong> 35 km/h SW (Aurora)</p>
                   <p><strong>Temperature:</strong> -52°C cloud top</p>
-                </div>
-                <div className="bg-blue-50 p-2 rounded text-xs">
-                  <p><strong>INSAT-3DR:</strong> IR channel active</p>
+                                    <p><strong>INSAT-3DR:</strong> IR channel active</p>
                   <p><strong>TimeGEN-1:</strong> Cooling trend detected</p>
                 </div>
               </div>
