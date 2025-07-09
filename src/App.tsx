@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Satellite, Cloud, Zap, AlertTriangle, Map, Settings, Download, Play, Pause, RefreshCw } from 'lucide-react';
+import { Satellite, Cloud, Zap, AlertTriangle, Map, Settings, Download, Play, Pause, RefreshCw, CheckSquare, Layers, PlayCircle, Square } from 'lucide-react';
 import Dashboard from './components/Dashboard';
 import WeatherMap from './components/WeatherMap';
 // ForecastControls is no longer imported here
@@ -119,7 +119,55 @@ function App() {
       default:
         return (
           <>
+                  <div className="bg-slate-800/95 backdrop-blur-sm rounded-lg p-4 z-20 w-80 shadow-2xl">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <Settings className="h-5 w-5 text-blue-400" />
+                      <span className="text-white font-semibold text-lg">Forecast Configuration</span>
+                    </div>
+                    <div className="space-y-3 mb-4 text-sm">
+                      <div>
+                        <label className="text-xs text-slate-400">Region of Interest</label>
+                        <div className="p-2 bg-slate-700 rounded mt-1 text-white">New Delhi</div>
+                      </div>
+                       <div>
+                        <label className="text-xs text-slate-400">Model Version</label>
+                        <div className="p-2 bg-slate-700 rounded mt-1 text-white">Megh-D v1.2 (Stable)</div>
+                      </div>
+                    </div>
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold mb-2 flex items-center text-slate-300">
+                        <Layers className="w-4 h-4 mr-2" /> Input Data Channels
+                      </h4>
+                      <div className="space-y-1 text-xs font-medium text-slate-300 bg-slate-700/50 p-2 rounded">
+                        <div className="flex items-center text-green-400"><CheckSquare className="w-3.5 h-3.5 mr-2" /> Visible (VIS)</div>
+                        <div className="flex items-center text-green-400"><CheckSquare className="w-3.5 h-3.5 mr-2" /> Infrared (IR)</div>
+                        <div className="flex items-center text-slate-500"><Square className="w-3.5 h-3.5 mr-2" /> Water Vapor (WV)</div>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold mb-2 text-slate-300">Model Input Sequence</h4>
+                      <div className="flex justify-around space-x-2">
+                        {[ 'T-90m', 'T-60m', 'T-30m', 'T-0' ].map((label, i) => (
+                          <div key={label} className="text-center">
+                            <img 
+                              src={`https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=focalpoint&fp-x=${0.7-i*0.1}`} 
+                              alt={label} 
+                              className="w-14 h-14 rounded-md border-2 border-slate-600 object-cover" 
+                            />
+                            <p className="text-xs mt-1 text-slate-400 font-medium">{label}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="mt-5">
+                        <button className="w-full flex items-center justify-center p-1 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-green-500 transition-colors">
+                            <PlayCircle className="w-5 h-5 mr-2"/>
+                            <span>Forecast is Live</span>
+                        </button>
+                    </div>
+                  </div>
             <ModelStatus modelStatus={modelStatus} />
+            
             <DataPanel 
               selectedLayer={selectedLayer} 
               stormIntensity={stormIntensity}
