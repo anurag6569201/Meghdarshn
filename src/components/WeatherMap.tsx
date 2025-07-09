@@ -693,7 +693,7 @@ const WeatherMap: React.FC<WeatherMapProps> = ({
       </div>
 
       {/* Scale Bar */}
-      <div className="absolute bottom-80 left-4 bg-slate-800/95 backdrop-blur-sm rounded-lg p-3 z-20">
+      <div className="absolute bottom-20 mb-3 left-4 bg-slate-800/95 backdrop-blur-sm rounded-lg p-3 z-20">
         <div className="flex items-center space-x-2 text-white text-xs">
           <div className="w-16 h-1 bg-white"></div>
           <span>200 km</span>
